@@ -159,8 +159,8 @@ class Level {
         }
         if ( (typeOfObject === COIN) && (object.type === COIN) ) {
             this.removeActor(object);
-                if (this.noMoreActors(COIN)) {
-                    this.status = 'won';
+            if (this.noMoreActors(COIN)) {
+                 this.status = 'won';
                 }
         }
     }
@@ -184,9 +184,7 @@ class LevelParser {
     }
 
     createGrid(arrayStr) {
-        return arrayStr.map((noMoveArray) => {
-            return [...noMoveArray].map(cell => this.obstacleFromSymbol(cell));
-        });
+        return arrayStr.map((noMoveArray) => [...noMoveArray].map(cell => this.obstacleFromSymbol(cell)););
     }
 
     createActors(arrayStr) {
@@ -221,7 +219,7 @@ class Fireball extends Actor {
     }
 
      get type() {
-        return FIREBALL;
+      return FIREBALL;
      }
 
     getNextPosition(time = 1) {
@@ -285,7 +283,7 @@ class Coin extends Actor {
     }
 
      get type() {
-         return COIN;
+      return COIN;
      }
 
     updateSpring(time = 1) {
@@ -337,6 +335,6 @@ const parser = new LevelParser(actorDict);
 
 loadLevels()
     .then((res) => {
-    runGame(JSON.parse(res), parser, DOMDisplay)
-.then(() => alert('Вы выиграли!'))
+      runGame(JSON.parse(res), parser, DOMDisplay)
+        .then(() => alert('Вы выиграли!'))
 });

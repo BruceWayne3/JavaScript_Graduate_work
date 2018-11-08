@@ -318,7 +318,7 @@ class Player extends Actor {
     }
 
     get type() {
-        return PLAYER;
+     return PLAYER;
     }
 }
 

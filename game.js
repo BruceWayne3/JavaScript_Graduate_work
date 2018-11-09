@@ -161,7 +161,7 @@ class Level {
             this.removeActor(object);
             if (this.noMoreActors(COIN)) {
                  this.status = 'won';
-                }
+            }
         }
     }
 }
@@ -219,7 +219,7 @@ class Fireball extends Actor {
     }
 
      get type() {
-      return FIREBALL;
+         return FIREBALL;
      }
 
     getNextPosition(time = 1) {
@@ -283,7 +283,7 @@ class Coin extends Actor {
     }
 
      get type() {
-      return COIN;
+         return COIN;
      }
 
     updateSpring(time = 1) {
@@ -318,7 +318,7 @@ class Player extends Actor {
     }
 
     get type() {
-     return PLAYER;
+        return PLAYER;
     }
 }
 

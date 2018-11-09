@@ -192,19 +192,15 @@ class LevelParser {
     createActors(arrayStr) {
         return arrayStr.reduce((previewElement, currentElement, y) => {
             [...currentElement].forEach((cell, x) => {
-                    if (cell) {
-                        let constructor = this.actorFromSymbol(cell);
-
-                        if (constructor && typeof(constructor) === 'function') {
-                            let objectActor = new constructor(new Vector(x, y));
-
-                            if (objectActor instanceof Actor) {
-                                previewElement.push(objectActor);
-                            }
-                        }
+                let constructor = this.actorFromSymbol(cell);
+                if (constructor && typeof(constructor) === 'function') {
+                    let objectActor = new constructor(new Vector(x, y));
+                    if (objectActor instanceof Actor) {
+                        previewElement.push(objectActor);
                     }
                 }
-            );
+            }
+                                       );
             return previewElement;
         }, []);
     }

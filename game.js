@@ -184,7 +184,8 @@ class LevelParser {
     }
 
     createGrid(arrayStr) {
-        return arrayStr.map((noMoveArray) => [...noMoveArray].map(cell => this.obstacleFromSymbol(cell)));
+        return arrayStr.map(noMoveArray =>
+                            [...noMoveArray].map(cell => this.obstacleFromSymbol(cell)));
     }
 
     createActors(arrayStr) {

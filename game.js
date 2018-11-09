@@ -199,8 +199,7 @@ class LevelParser {
                         previewElement.push(objectActor);
                     }
                 }
-            }
-                                       );
+            });
             return previewElement;
         }, []);
     }
